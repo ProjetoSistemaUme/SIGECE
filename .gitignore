@@ -62,3 +62,6 @@ angular.json
 node_modules
 bower_components
 dist
+
+.devcontainer
+.github
