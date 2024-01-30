@@ -65,3 +65,4 @@ dist
 
 .devcontainer
 .github
+package-lock.json
