@@ -85,9 +85,60 @@ Após seguir estas etapas, o SIGECE estará instalado e rodando em seu computado
 Para obter mais informações sobre o SIGECE, consulte a documentação do projeto. A documentação está disponível no repositório do SIGECE, na pasta `docs`.
 
 
+**-----------**
+
+**Instalar WSL2**
+
+**Windows 10/11**
+***Windows Update***
+Verifique se seu Windows está atualizado, pois o WSL 2 depende de uma versão atualizada do Hyper-V. Verifique o Windows Update.
+
+Atualizar o WSL
+Com a versão 2004 do Windows 10 ou Windows 11, o WSL já está presente em sua máquina, execute o comando para pegar a versão mais recente do WSL:
+
+```
+wsl --update
+```
+
+E pegue a versão mais recente do WSL.
+
+Atribuir a versão default do WSL para a versão 2
+A versão 1 do WSL pode ser a padrão em sua máquina, execute o comando abaixo para definir como padrão a versão 2:
+
+```
+wsl --set-default-version 2
+```
+
+Instale o Ubuntu
+Execute o comando:
+
+```
+wsl --install
+```
+
+Este comando irá instalar o Ubuntu como o Linux padrão.
+
+Se você quiser instalar uma versão diferente do Ubuntu, execute o comando wsl -l -o. Será listado todas as versões de Linux disponíveis. Instale a versão escolhida com o comando wsl --install -d nome-da-distribuicao.
+
+Sugerimos o Ubuntu (sem versão) por ser uma distribuição popular e que já vem com várias ferramentas úteis para desenvolvimento instaladas por padrão.
+
+Após o término do comando, você deverá criar um nome de usuário que poderá ser o mesmo da sua máquina e uma senha, este será o usuário root da sua instância WSL.
+
+Para abrir uma nova janela do Ubuntu, basta digitar Ubuntu no menu iniciar e clicar no ícone do Ubuntu.
+
+Recomendamos o uso do Windows Terminal como terminal padrão para desenvolvimento no Windows. Ele agregará o shell do Ubuntu, assim como o PowerShell e o CMD em uma única janela.
+
+(Opcional) Alterar a versão de uma distribuição do Linux de WSL 1 para WSL 2
+Se a distribuição Linux que você instalou estiver na versão 1, você pode alterar para a versão 2 com o seguinte comando:
+
+```
+wsl --set-version <distribution name> 2
+```
+
+
 **Instalar o Docker com Docker Engine (Docker Nativo)**
 
-Instale os pré-requisitos:
+*Instale os pré-requisitos:*
 
 ```
 sudo apt update && sudo apt upgrade
