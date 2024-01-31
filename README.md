@@ -83,3 +83,63 @@ Após seguir estas etapas, o SIGECE estará instalado e rodando em seu computado
 **Para obter mais informações**
 
 Para obter mais informações sobre o SIGECE, consulte a documentação do projeto. A documentação está disponível no repositório do SIGECE, na pasta `docs`.
+
+
+**Instalar o Docker com Docker Engine (Docker Nativo)**
+
+Instale os pré-requisitos:
+
+```
+sudo apt update && sudo apt upgrade
+sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+Adicione o repositório do Docker na lista de sources do Ubuntu:
+
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+OBSERVAÇÃO: Se você estiver usando uma distribuição diferente do Ubuntu, substitua os endereços acima respectivamente: Exemplo: Instalando o docker-engine no Debian:
+
+```
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+Instale o Docker Engine
+
+```
+sudo apt-get update
+```
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+Dê permissão para rodar o Docker com seu usuário corrente:
+
+```
+sudo usermod -aG docker $USER
+```
+
+Reiniciar o WSL via linha de comando do Windows para que não seja necessário autorização root para rodar o comando docker:
+
+```
+wsl --shutdown
+```
+
+Acessar novamente o Ubuntu e iniciar o serviço do Docker:
+
+```
+sudo service docker start
+```
