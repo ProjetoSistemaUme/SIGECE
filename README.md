@@ -32,6 +32,8 @@ code .
 docker-compose up --build --no-deps -d
 ```
 
+instale as extensões no Vs Code: Docker e Dev Containers
+
 6. No VS Code, abra o devcontainer usando o atalho "shift + control +p" e selecione "Dev Containers: Rebuild and Reopen in Container".
 
 7. Na próxima opção, deixe vazio e dê "Enter".
