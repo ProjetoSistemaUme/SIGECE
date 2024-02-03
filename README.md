@@ -40,7 +40,7 @@ instale as extensões no Vs Code: Docker e Dev Containers
 
 8. Ao abrir o dev container, entre na pasta "SIGECE-APP" e rode o comando "npm install" para instalar as dependências do Angular.
 
-9. Execute o comando "ng serve --show" para iniciar o servidor de desenvolvimento.
+9. Execute o comando "ng serve --open" para iniciar o servidor de desenvolvimento.
 
 O site estará disponível no endereço http://localhost:4200.
 
